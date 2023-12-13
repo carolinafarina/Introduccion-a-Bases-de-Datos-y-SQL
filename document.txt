@@ -1,0 +1,77 @@
+Project Documentation: Contacts Database
+
+1. Introduction
+
+This document provides a detailed description of the contacts database, including the table structure, relationships, data types, and common SQL queries.
+
+2. Database Structure
+
+   2.1 Tables
+
+      CONTACTS
+
+         - ID_Contact (Primary Key, Type: INTEGER)
+         - FirstsName (Type: TEXT)
+         - LastName (Type: TEXT)
+         - PhoneNumber (Type: INTEGER)
+         - Email (Type: TEXT)
+
+3. Relationships Between Tables
+
+   There are no related tables in this database.
+
+4. Data Types
+
+   - ID_Contact: INTEGER
+   - FirstsName: TEXT
+   - LastName: TEXT
+   - PhoneNumber: INTEGER
+   - Email: TEXT
+
+5. Sample Data
+
+   ID_Contact 102, FirstsName Allegra LastName Baxter PhoneNumber 1-214-976-2468 Email tellus@google.ca
+   ID_Contact 103, FirstsName Angelica LastName Baxter PhoneNumber 1-347-127-60701 Email nec@protonmail.com
+
+6. Common SQL Queries
+
+   6.1 Retrieve Unique Names
+
+      SELECT DISTINCT FirstsName FROM contacts ORDER BY FirstsName;
+
+   6.2 Select All Contacts
+
+      SELECT * FROM contacts;
+
+   6.3 Filter by Contact ID
+
+      SELECT LastName FROM contacts WHERE ID_Contact = 25;
+
+   6.4 Delete Contact by ID
+
+      DELETE FROM contacts WHERE ID_Contact = 25;
+
+   6.5 Select ID by Last Name
+
+      SELECT ID_Contact FROM contacts WHERE LastName='Rivera';
+
+   6.6 Update Last Name by ID
+
+      UPDATE contacts SET LastName='RIVERA' WHERE ID_Contact=34;
+
+   6.7 Specific Query by ID
+
+      SELECT LastName FROM contacts WHERE ID_Contact = 34;
+
+   6.8 Combined Query
+
+      SELECT * FROM contacts WHERE ID_Contact > 15 AND ID_Contact < 56;
+
+   6.9 Multiple Conditions Query
+
+      SELECT * FROM contacts WHERE ID_Contact= 89 OR LastName='RIVERA' OR LastName='Rivera';
+
+   6.10 Nested Conditions Query
+
+      SELECT * FROM contacts WHERE (FirstsName='Allegra' OR FirstsName='Angelica') AND LastName='Baxter' ORDER BY FirstsName;
+
